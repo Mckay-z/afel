@@ -39,7 +39,7 @@ export default function Hero() {
         priority
         style={{
           objectFit: 'cover',
-          objectPosition: 'top',
+          objectPosition: '33% top',
         }}
         aria-hidden="true"
       />
@@ -112,12 +112,9 @@ export default function Hero() {
 
         {/* Streaming links bar */}
         <div
+          className="streaming-links"
           style={{
-            display: 'flex',
-            alignItems: 'stretch',
             marginTop: 56,
-            borderTop: '0.5px solid rgba(255,255,255,0.12)',
-            borderBottom: '0.5px solid rgba(255,255,255,0.12)',
             animation: 'fadeUp 0.7s ease 0.6s forwards',
             opacity: 0,
           }}
@@ -127,21 +124,20 @@ export default function Hero() {
             { label: 'Apple Music', url: 'https://music.apple.com/us/artist/afel/1746960117', icon: '/apple.png' },
             { label: 'YouTube Music', url: 'https://music.youtube.com/channel/UCHRp_n79AY9LzSFPJBn3vbw', icon: '/youtubem.png' },
             { label: 'Audiomack', url: 'https://audiomack.com/afelmusic', icon: '/audiomack.png' },
-          ].map((s, i, arr) => (
+          ].map((s) => (
             <a
               key={s.label}
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
+              className="streaming-link-item"
               style={{
-                flex: 1,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 12,
                 padding: '24px 12px',
-                borderRight: i < arr.length - 1 ? '0.5px solid rgba(255,255,255,0.12)' : 'none',
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.04)')}

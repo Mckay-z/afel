@@ -9,18 +9,18 @@ import Lightbox from '@/components/ui/Lightbox'
 
 
 const LOCAL_GALLERY = [
-    { _id: '27', type: 'image', src: '/gallery/img-27.jpg' },
+  { _id: '27', type: 'image', src: '/gallery/img-27.jpg' },
   { _id: '28', type: 'image', src: '/gallery/img-28.jpg' },  
   { _id: '15', type: 'image', src: '/gallery/img-15.jpg' },
   // { _id: '1', type: 'image', src: '/gallery/img-1.jpeg' },
   // { _id: '2', type: 'image', src: '/gallery/img-2.jpeg' },
   { _id: '17', type: 'image', src: '/gallery/img-17.jpg' },
   { _id: '10', type: 'image', src: '/gallery/img-10.jpeg' },
+  { _id: '30', type: 'video', src: '/gallery/vid-3.mp4' },
 
   { _id: '3', type: 'image', src: '/gallery/img-3.jpeg' },
   // { _id: '11', type: 'image', src: '/gallery/img-11.jpg' },
   { _id: '12', type: 'image', src: '/gallery/img-12.jpg' },
-  { _id: '30', type: 'video', src: '/gallery/vid-3.mp4' },
   { _id: '13', type: 'image', src: '/gallery/img-13.jpg' },
   { _id: '14', type: 'image', src: '/gallery/img-14.jpg' },
   { _id: '4', type: 'image', src: '/gallery/img-4.jpeg' },
@@ -48,9 +48,9 @@ const LOCAL_GALLERY = [
   { _id: '37', type: 'image', src: '/gallery/img-30.jpeg' },
 ]
 
-export default function GalleryGrid() {
+export default function GalleryGrid({ limit }: { limit?: number }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
-  const gallery = LOCAL_GALLERY
+  const gallery = limit ? LOCAL_GALLERY.slice(0, limit) : LOCAL_GALLERY
 
   const lightboxItems = gallery.map((item) => ({
     src: item.src,
@@ -94,14 +94,8 @@ export default function GalleryGrid() {
           ))}
         </div> */}
 
-        {/* Photo grid — masonry-style 3 columns */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 3,
-          }}
-        >
+        {/* Photo grid — masonry-style 3 columns desktop, 2 columns mobile */}
+        <div className="gallery-grid">
           {gallery.map((item, index) => (
               <div
                 key={item._id}

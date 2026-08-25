@@ -4,7 +4,7 @@ import LatestDrops from '@/components/sections/LatestDrops'
 import GalleryGrid from '@/components/sections/GalleryGrid'
 import AboutBio from '@/components/sections/AboutBio'
 import StreamingBar from '@/components/layout/StreamingBar'
-import { getGallery, getAbout } from '@/sanity/lib/queries'
+import { getAbout } from '@/sanity/lib/queries'
 
 export const revalidate = 60
 
@@ -22,8 +22,7 @@ function extractBioText(bio: unknown): string | undefined {
 }
 
 export default async function HomePage() {
-  const [gallery, about] = await Promise.all([
-    getGallery(),
+  const [about] = await Promise.all([
     getAbout(),
   ])
 
@@ -31,7 +30,7 @@ export default async function HomePage() {
     <>
       <Hero />
       <LatestDrops />
-      <GalleryGrid />
+      <GalleryGrid limit={6} />
       <AboutBio
         bio={extractBioText(about && (about as { bio?: unknown }).bio)}
         stats={(about as { stats?: { value: string; label: string }[] } | null)?.stats}

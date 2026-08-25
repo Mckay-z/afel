@@ -4,7 +4,6 @@ export const navSettings = defineType({
   name: 'navSettings',
   title: 'Navigation Settings',
   type: 'document',
-  __experimental_actions: ['update', 'publish'],
   fields: [
     defineField({
       name: 'navLinks',

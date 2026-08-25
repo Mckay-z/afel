@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import LabelBadge from '@/components/ui/LabelBadge'
 import StreamingBar from '@/components/layout/StreamingBar'
 import { getReleases } from '@/sanity/lib/queries'
@@ -67,7 +66,7 @@ export default async function ReleasesPage() {
           }}
         >
           {/* Featured large left */}
-          <Link href="#find-me-on" style={{ display: 'block' }}>
+          <a href="#find-me-on" style={{ display: 'block' }}>
             <div
               className="release-card-featured"
               style={{
@@ -99,12 +98,12 @@ export default async function ReleasesPage() {
                 <span style={{ fontFamily: 'var(--font-display)', fontSize: 28, color: '#fff' }}>{featured.title}</span>
               </div>
             </div>
-          </Link>
+          </a>
 
           {/* Right column — smaller releases stacked */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
             {rest.slice(0, 3).map((r: ReleaseItem, i: number) => (
-              <Link key={r._id} href="#find-me-on" style={{ display: 'block', flex: 1 }}>
+              <a key={r._id} href="#find-me-on" style={{ display: 'block', flex: 1 }}>
                 <div
                   className="release-card-small"
                   style={{
@@ -134,7 +133,7 @@ export default async function ReleasesPage() {
                     <span style={{ fontFamily: 'var(--font-display)', fontSize: 16, color: '#fff' }}>{r.title}</span>
                   </div>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -148,7 +147,7 @@ export default async function ReleasesPage() {
           }}
         >
           {rest.slice(3).map((r: ReleaseItem, i: number) => (
-            <Link key={r._id} href="#find-me-on" style={{ display: 'block' }}>
+            <a key={r._id} href="#find-me-on" style={{ display: 'block' }}>
               <div
                 className="release-card-bottom"
                 style={{
@@ -179,7 +178,7 @@ export default async function ReleasesPage() {
                   <span style={{ fontFamily: 'var(--font-display)', fontSize: 13, color: '#fff' }}>{r.title}</span>
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
