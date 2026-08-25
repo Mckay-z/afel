@@ -116,7 +116,7 @@ export default async function ReleasesPage() {
                 >
                   {r.localImage || r.coverArt?.asset ? (
                     <Image
-                      src={r.localImage || urlFor(r.coverArt).width(400).url()}
+                      src={r.localImage || urlFor(r.coverArt!).width(400).url()}
                       alt={r.title}
                       fill
                       sizes="33vw"
@@ -159,7 +159,7 @@ export default async function ReleasesPage() {
               >
                 {r.localImage || r.coverArt?.asset ? (
                   <Image
-                    src={r.localImage || urlFor(r.coverArt).width(400).url()}
+                    src={r.localImage || urlFor(r.coverArt!).width(400).url()}
                     alt={r.title}
                     fill
                     sizes="25vw"

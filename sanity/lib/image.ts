@@ -1,4 +1,4 @@
-import imageUrlBuilder from '@sanity/image-url'
+import { createImageUrlBuilder, type SanityImageSource } from '@sanity/image-url'
 import { client } from './client'
 import { createClient } from '@sanity/client'
 
@@ -10,8 +10,8 @@ const fallbackClient = createClient({
   useCdn: true,
 })
 
-const builder = imageUrlBuilder(client || fallbackClient)
+const builder = createImageUrlBuilder(client || fallbackClient)
 
-export function urlFor(source: any) {
+export function urlFor(source: SanityImageSource) {
   return builder.image(source)
 }
