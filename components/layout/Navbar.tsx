@@ -25,10 +25,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    setMobileOpen(false)
-  }, [pathname])
-
   const navStyle: React.CSSProperties = {
     position: 'fixed',
     top: 0,
@@ -156,6 +152,7 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
+              onClick={() => setMobileOpen(false)}
               style={{
                 fontSize: 18,
                 fontFamily: 'var(--font-display)',

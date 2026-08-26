@@ -31,18 +31,35 @@ export default function Hero() {
       }}
       id="hero"
     >
-      {/* Background image */}
-      <Image
-        src="/bg.png"
-        alt=""
-        fill
-        priority
-        style={{
-          objectFit: 'cover',
-          objectPosition: '33% top',
-        }}
-        aria-hidden="true"
-      />
+      {/* Background image - Desktop */}
+      <div className="hero-bg-desktop" style={{ position: 'absolute', inset: 0 }}>
+        <Image
+          src="/bg.png"
+          alt=""
+          fill
+          priority
+          style={{
+            objectFit: 'cover',
+            objectPosition: '35% top',
+          }}
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Background image - Mobile */}
+      <div className="hero-bg-mobile" style={{ position: 'absolute', inset: 0 }}>
+        <Image
+          src="/gallery/img-26.jpg"
+          alt=""
+          fill
+          priority
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center',
+          }}
+          aria-hidden="true"
+        />
+      </div>
       {/* Dark overlay for text readability */}
       <div
         aria-hidden="true"
