@@ -23,19 +23,23 @@ const DEFAULT_STATS = [
 const BIO_SECTIONS = [
   {
     title: "1. Early Beginnings & Musical Journey",
-    content: "Afel started his music journey because he wanted to follow <strong>his mother’s legacy</strong> as a musician. After entering university to study music, he became involved in dancing activities with popular Ghanaian dancers such as <strong>Calvin Perbi, Incredible Zigi</strong>, and others. He eventually returned his focus to music after a Nigerian musical legend, <strong>Olamide</strong>, reached out to him in 2020."
+    content: "Afel started his music journey because he wanted to follow <strong>his mother’s legacy</strong> as a musician. After entering university to study music, he became involved in dancing activities with popular Ghanaian dancers such as <strong>Calvin Perbi, Incredible Zigi</strong>, and others. He eventually returned his focus to music after a Nigerian musical legend, <strong>Olamide</strong>, texted him in <strong>2022</strong>."
   },
   {
-    title: "2. Covers & Rise to Recognition",
+    title: "2. Competitions & Early Recognition",
+    content: "Before the breakthrough, Afel tested himself on some of the biggest talent-hunt stages around him. He went for competitions like the <strong>Hit Maker</strong> audition and the <strong>Mentor</strong> audition, but couldn’t make it through to the final stage.<br /><br />He then entered another competition called <strong>Tu Ma Y3n Hwe</strong> in <strong>2021</strong> — and came out the <strong>winner</strong>."
+  },
+  {
+    title: "3. Covers & Rise to Recognition",
     content: "Moving forward, Afel actively released covers that gained significant traction on the internet. Some of these covers included <strong>“Bandana” by Fireboy DML, “Arizona” by Lojay and Olamide, and “Katigori” by Oxlade</strong>.<br /><br />One of the major turning points in his career came when <strong>Grammy Award-winning producer London</strong>, the official sound engineer for Grammy Award-winning artist <strong>Rema</strong>, recognized Afel and announced him as the winner of his viral <strong>“Pina Colada” TikTok challenge</strong>. The challenge featured American Grammy Award-winning artist <strong>6LACK</strong> and Nigerian star <strong>Ayra Starr</strong>."
   },
   {
-    title: "3. Collaborations & The GrayInk Collective",
-    content: "At this point in his career, Afel had begun building relationships with award-winning producers and sound engineers behind some of the biggest hits of recent years. These included <strong>UglyxTough</strong>, as well as <strong>Kojo Blak’s</strong> immediate production and sound engineering team.<br /><br />Alongside these collaborations, Afel also became part of a new musical family: <strong>GrayInk</strong>, a collective of nine artists. The collective includes <strong>Zeeboy</strong>, one of Ghana’s fast-rising artists, among other talented acts…Ese EMK , Spicer and the likes."
+    title: "4. The Come Up & International Features",
+    content: "In <strong>2023</strong>, Afel was featured on <strong>The Come Up</strong> album, a project that brought him alongside international acts including Jamaican star <strong>Skillibeng</strong>, <strong>King Promise</strong>, and <strong>Arathejay</strong>, together with other artists.<br /><br />The album was arranged and published by <strong>Crux Global</strong>."
   },
   {
-    title: "4. Songwriting & Contributions to Ghanaian Music",
-    content: "Since then, Afel has established himself as more than just a singer and performing artist. He has also developed himself as a <strong>songwriter</strong>, with some of his songwriting contributions making their way into the music industry through artists who have carried the songs and projects exceptionally well.<br /><br />Afel’s contribution to Ghana’s music industry has helped birth songs such as <strong>“Lomo Lomo,” “Cheat on You,” and “Signature,”</strong> as well as the recent 2026 release by <strong>Sista Efya</strong>. Titled Motherfucker…Produced by ugly and tough"
+    title: "5. Songwriting & Contributions to Ghanaian Music",
+    content: "Since then, Afel has established himself as more than just a singer and performing artist. He has also developed himself as a <strong>songwriter</strong>, with some of his songwriting contributions making their way into the music industry through artists who have carried the songs and projects exceptionally well.<br /><br />Afel’s contribution to Ghana’s music industry has helped birth songs such as <strong>“Signature.”</strong>"
   }
 ]
 
@@ -156,7 +160,13 @@ export default async function AboutPage() {
             <h3 style={{ fontSize: 24, color: '#ffffff', fontWeight: 600, marginBottom: 20, fontFamily: 'var(--font-body)', letterSpacing: '0.02em' }}>{BIO_SECTIONS[3].title}</h3>
             <p style={{ fontSize: 13, lineHeight: 2.0, color: 'var(--text-muted-2)', letterSpacing: '0.04em' }} dangerouslySetInnerHTML={{ __html: BIO_SECTIONS[3].content }} />
           </div>
-          
+
+          {/* Section 5 */}
+          <div>
+            <h3 style={{ fontSize: 24, color: '#ffffff', fontWeight: 600, marginBottom: 20, fontFamily: 'var(--font-body)', letterSpacing: '0.02em' }}>{BIO_SECTIONS[4].title}</h3>
+            <p style={{ fontSize: 13, lineHeight: 2.0, color: 'var(--text-muted-2)', letterSpacing: '0.04em' }} dangerouslySetInnerHTML={{ __html: BIO_SECTIONS[4].content }} />
+          </div>
+
           {/* Asymmetric stats grid */}
           <div
             style={{
