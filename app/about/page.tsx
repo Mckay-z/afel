@@ -38,8 +38,16 @@ const BIO_SECTIONS = [
     content: "In <strong>2023</strong>, Afel was featured on <strong>The Come Up</strong> album, a project that brought him alongside international acts including Jamaican star <strong>Skillibeng</strong>, <strong>King Promise</strong>, and <strong>Arathejay</strong>, together with other artists.<br /><br />The album was arranged and published by <strong>Crux Global</strong>."
   },
   {
-    title: "5. Songwriting & Contributions to Ghanaian Music",
+    title: "5. Collaborations & The GrayInk Collective",
+    content: "At this point in his career, Afel had begun building relationships with award-winning producers and sound engineers behind some of the biggest hits of recent years. These included <strong>UglyxTough</strong>, as well as <strong>Kojo Blak’s</strong> immediate production and sound engineering team.<br /><br />Alongside these collaborations, Afel also became part of a new musical family: <strong>GrayInk</strong>, a collective of nine artists. The collective includes <strong>Zeeboy</strong>, one of Ghana’s fast-rising artists, among other talented acts…Ese EMK , Spicer and the likes."
+  },
+  {
+    title: "6. Songwriting & Contributions to Ghanaian Music",
     content: "Since then, Afel has established himself as more than just a singer and performing artist. He has also developed himself as a <strong>songwriter</strong>, with some of his songwriting contributions making their way into the music industry through artists who have carried the songs and projects exceptionally well.<br /><br />Afel’s contribution to Ghana’s music industry has helped birth songs such as <strong>“Signature.”</strong>"
+  },
+  {
+    title: "7. Pulling His Own Crowd",
+    content: "Throughout the journey, Afel has been able to pull up a crowd to <strong>his own shows</strong> — headline nights organised in <strong>2025</strong> and <strong>2026</strong>."
   }
 ]
 
@@ -134,7 +142,7 @@ export default async function AboutPage() {
           </div>
 
           {/* Image 2 */}
-          <div
+          {/* <div
             style={{
               width: '100%',
               maxWidth: 600,
@@ -153,7 +161,7 @@ export default async function AboutPage() {
               sizes="(max-width: 600px) 100vw, 600px"
               style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
-          </div>
+          </div> */}
 
           {/* Section 4 */}
           <div>
@@ -165,6 +173,39 @@ export default async function AboutPage() {
           <div>
             <h3 style={{ fontSize: 24, color: '#ffffff', fontWeight: 600, marginBottom: 20, fontFamily: 'var(--font-body)', letterSpacing: '0.02em' }}>{BIO_SECTIONS[4].title}</h3>
             <p style={{ fontSize: 13, lineHeight: 2.0, color: 'var(--text-muted-2)', letterSpacing: '0.04em' }} dangerouslySetInnerHTML={{ __html: BIO_SECTIONS[4].content }} />
+          </div>
+
+          {/* Group photo — the collective */}
+          <div
+            style={{
+              width: '100%',
+              maxWidth: 700,
+              margin: '0 auto',
+              aspectRatio: '3/4',
+              background: 'var(--surface)',
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
+            <Image
+              src="/gallery/img-30.jpeg"
+              alt="AFEL with the GrayInk collective"
+              fill
+              sizes="(max-width: 700px) 100vw, 700px"
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+            />
+          </div>
+
+          {/* Section 6 */}
+          <div>
+            <h3 style={{ fontSize: 24, color: '#ffffff', fontWeight: 600, marginBottom: 20, fontFamily: 'var(--font-body)', letterSpacing: '0.02em' }}>{BIO_SECTIONS[5].title}</h3>
+            <p style={{ fontSize: 13, lineHeight: 2.0, color: 'var(--text-muted-2)', letterSpacing: '0.04em' }} dangerouslySetInnerHTML={{ __html: BIO_SECTIONS[5].content }} />
+          </div>
+
+          {/* Section 7 */}
+          <div>
+            <h3 style={{ fontSize: 24, color: '#ffffff', fontWeight: 600, marginBottom: 20, fontFamily: 'var(--font-body)', letterSpacing: '0.02em' }}>{BIO_SECTIONS[6].title}</h3>
+            <p style={{ fontSize: 13, lineHeight: 2.0, color: 'var(--text-muted-2)', letterSpacing: '0.04em' }} dangerouslySetInnerHTML={{ __html: BIO_SECTIONS[6].content }} />
           </div>
 
           {/* Asymmetric stats grid */}
